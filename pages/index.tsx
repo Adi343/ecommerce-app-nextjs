@@ -25,7 +25,8 @@ const Home: NextPage = () => {
                 width: "100%",
                 height: "100px",
                 borderRadius: "5px",
-                backgroundColor: "whitesmoke",
+                backgroundColor: "black",
+                color: "#f97316",
               }}
             >
               {item}
