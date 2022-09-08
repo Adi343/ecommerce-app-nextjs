@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import { useSelector } from "react-redux";
+
+import ProjectCard from "../components/ProjectCard";
 const Home: NextPage = () => {
   const products = useSelector((state: any) => state.store.products);
 
@@ -20,19 +22,11 @@ const Home: NextPage = () => {
       >
         {products.map((item: any) => {
           return (
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                width: "100%",
-                height: "100px",
-                borderRadius: "5px",
-                backgroundColor: "black",
-                color: "#f97316",
-              }}
-            >
-              {item.name}
-            </div>
+            <ProjectCard
+              id={item.id}
+              name={item.name}
+              quantity={item.quantity}
+            />
           );
         })}
       </div>

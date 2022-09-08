@@ -2,6 +2,13 @@ import { useSelector } from "react-redux";
 
 const NavBar = () => {
   const items = useSelector((state: any) => state.account.itemsInCart);
+  let init = 0;
+  const total = items
+    .map((item: any) => item.quantity)
+    .reduce(function (result: any, item: any) {
+      return result + item;
+    }, 0);
+
   // useSelector((state) => {
   //   console.log(JSON.stringify(state));
   // });
@@ -36,7 +43,7 @@ const NavBar = () => {
         }}
       >
         My Cart
-        <span style={{ marginLeft: "3px" }}>{items.length}</span>
+        <span style={{ marginLeft: "3px" }}>{total}</span>
       </button>
     </div>
   );
