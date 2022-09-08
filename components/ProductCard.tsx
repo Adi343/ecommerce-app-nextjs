@@ -1,10 +1,15 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, removeItemInCart } from "../redux/accountSlice";
 
-const ProjectCard = (props: any) => {
+const ProductCard = (props: any) => {
   const dispatch = useDispatch();
-  const [itemCount, setItemCount] = useState(props.quantity);
+  const productsInCart = useSelector((state: any) => state.account.itemsInCart);
+  const index = productsInCart.findIndex((item) => item.id === props.id);
+
+  const [itemCount, setItemCount] = useState(
+    index === -1 ? 0 : productsInCart[index].quantity
+  );
 
   const addItem = () => {
     console.log(`itemCount is ${itemCount}`);
@@ -39,14 +44,32 @@ const ProjectCard = (props: any) => {
         alignItems: "center",
         justifyContent: "space-around",
         width: "100%",
-        height: "100px",
-        borderRadius: "5px",
+        height: "150px",
+        borderRadius: "10px",
         backgroundColor: "black",
         color: "#f97316",
       }}
     >
-      {props.name}
-      {props.id}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          width: "100%",
+        }}
+      >
+        <div>
+          <span style={{ color: "white" }}>#{props.id}</span>
+          <span>{props.name}</span>
+        </div>
+        <div
+          style={{
+            width: "90px",
+            height: "90px",
+            borderRadius: "10px",
+            backgroundColor: "white",
+          }}
+        />
+      </div>
       <span>{itemCount}</span>
       <div>
         <button onClick={addItem}>+</button>
@@ -57,4 +80,4 @@ const ProjectCard = (props: any) => {
   );
 };
 
-export default ProjectCard;
+export default ProductCard;
