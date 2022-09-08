@@ -23,6 +23,7 @@ const NavBar = () => {
         backgroundColor: "black",
         padding: "5px",
         height: "50px",
+        width: "100%",
       }}
     >
       <Link href="/">
@@ -35,21 +36,37 @@ const NavBar = () => {
           Adithya's Shop
         </span>
       </Link>
-      <Link href="/checkout">
+      <div>
+        <Link href="/checkout">
+          <button
+            style={{
+              height: "30px",
+              width: "90px",
+              borderRadius: "5px",
+              margin: "5px",
+              backgroundColor: "black",
+              border: "1px solid white",
+              color: "white",
+            }}
+          >
+            My Cart
+            <span style={{ marginLeft: "3px" }}>{total}</span>
+          </button>
+        </Link>
         <button
           style={{
             height: "30px",
             width: "90px",
             borderRadius: "5px",
-            backgroundColor: "black",
-            border: "1px solid white",
-            color: "white",
+            margin: "5px",
+            backgroundColor: "white",
+            border: "1px solid black",
+            color: "black",
           }}
         >
-          My Cart
-          <span style={{ marginLeft: "3px" }}>{total}</span>
+          Sign In
         </button>
-      </Link>
+      </div>
     </div>
   );
 };

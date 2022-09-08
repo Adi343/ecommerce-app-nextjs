@@ -11,7 +11,7 @@ const Home: NextPage = () => {
         style={{
           display: "grid",
           gap: "10px",
-          gridTemplateColumns: "1fr 1fr",
+          // gridTemplateColumns: "1fr 1fr",
           alignItems: "center",
           justifyContent: "center",
           height: "60vh",
