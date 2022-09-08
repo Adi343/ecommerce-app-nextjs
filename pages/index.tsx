@@ -4,7 +4,6 @@ import NavBar from "../components/NavBar";
 const Home: NextPage = () => {
   return (
     <div>
-      <NavBar />
       <div
         style={{
           display: "grid",
