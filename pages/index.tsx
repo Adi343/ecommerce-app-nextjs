@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
-import NavBar from "../components/NavBar";
-
+import { useSelector } from "react-redux";
 const Home: NextPage = () => {
+  const products = useSelector((state: any) => state.store.products);
+
   return (
     <div>
       <div
@@ -17,10 +18,12 @@ const Home: NextPage = () => {
           borderRadius: "5px",
         }}
       >
-        {["P1", "P2", "P3", "P4", "P5", "P6"].map((item) => {
+        {products.map((item: any) => {
           return (
             <div
               style={{
+                display: "flex",
+                justifyContent: "center",
                 width: "100%",
                 height: "100px",
                 borderRadius: "5px",
@@ -28,7 +31,7 @@ const Home: NextPage = () => {
                 color: "#f97316",
               }}
             >
-              {item}
+              {item.name}
             </div>
           );
         })}

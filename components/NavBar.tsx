@@ -2,6 +2,9 @@ import { useSelector } from "react-redux";
 
 const NavBar = () => {
   const items = useSelector((state: any) => state.account.itemsInCart);
+  // useSelector((state) => {
+  //   console.log(JSON.stringify(state));
+  // });
 
   return (
     <div
