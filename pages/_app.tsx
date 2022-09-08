@@ -1,14 +1,17 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
-
+import { Provider } from "react-redux";
+import { store } from "../redux/store";
 import NavBar from "../components/NavBar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SessionProvider session={pageProps.session}>
-      <NavBar />
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <NavBar />
+        <Component {...pageProps} />
+      </Provider>
     </SessionProvider>
   );
 }
