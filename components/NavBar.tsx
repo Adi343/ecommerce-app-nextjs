@@ -33,7 +33,7 @@ const NavBar = () => {
             color: "#f97316",
           }}
         >
-          Adithya's Shop
+          Shop
         </span>
       </Link>
       <div>
