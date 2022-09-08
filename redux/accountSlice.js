@@ -17,4 +17,4 @@ export const accountSlice = createSlice({
 
 export const { addItem } = accountSlice.actions;
 
-export default accountSlice.reducerß;
+export default accountSlice.reducer;

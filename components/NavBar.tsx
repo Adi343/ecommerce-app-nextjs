@@ -1,4 +1,8 @@
+import { useSelector } from "react-redux";
+
 const NavBar = () => {
+  const items = useSelector((state: any) => state.account.itemsInCart);
+
   return (
     <div
       style={{
@@ -21,7 +25,7 @@ const NavBar = () => {
       <button
         style={{
           height: "30px",
-          width: "70px",
+          width: "90px",
           borderRadius: "5px",
           backgroundColor: "black",
           border: "1px solid white",
@@ -29,6 +33,7 @@ const NavBar = () => {
         }}
       >
         My Cart
+        <span style={{ marginLeft: "3px" }}>{items.length}</span>
       </button>
     </div>
   );
