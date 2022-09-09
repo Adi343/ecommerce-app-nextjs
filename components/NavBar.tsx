@@ -53,19 +53,6 @@ const NavBar = () => {
             <span style={{ marginLeft: "3px" }}>{total}</span>
           </button>
         </Link>
-        <button
-          style={{
-            height: "30px",
-            width: "90px",
-            borderRadius: "5px",
-            margin: "5px",
-            backgroundColor: "white",
-            border: "1px solid black",
-            color: "black",
-          }}
-        >
-          Sign In
-        </button>
       </div>
     </div>
   );
