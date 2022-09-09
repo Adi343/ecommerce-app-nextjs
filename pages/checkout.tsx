@@ -3,7 +3,7 @@ import ProjectCard from "../components/ProductCard";
 
 const checkout = () => {
   const cartItems: [] = useSelector((state: any) => state.account.itemsInCart);
-  console.log(JSON.stringify(cartItems));
+
   return (
     <div
       style={{
@@ -60,7 +60,6 @@ const checkout = () => {
               borderRadius: "5px",
               margin: "5px",
               backgroundColor: "black",
-
               color: "white",
             }}
           >
