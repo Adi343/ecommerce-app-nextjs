@@ -1,19 +1,31 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { resetCart } from "../redux/accountSlice";
 import ProjectCard from "../components/ProductCard";
 
 const checkout = () => {
+  const dispatch = useDispatch();
   const cartItems: [] = useSelector((state: any) => state.account.itemsInCart);
 
   function orderItems() {
+    const orderBody = cartItems.map((item: any) => {
+      return {
+        name: item.name,
+        quantity: item.quantity,
+      };
+    });
     fetch("/api/order", {
       method: "POST",
-      body: JSON.stringify(cartItems),
+      body: JSON.stringify(orderBody),
       headers: {
         "Content-Type": "application/json",
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.message === "success") {
+          dispatch(resetCart());
+        }
+      });
   }
 
   return (

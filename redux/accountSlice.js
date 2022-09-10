@@ -45,13 +45,13 @@ export const accountSlice = createSlice({
       // state.itemsInCart = [...state.itemsInCart, product];
       state.itemsInCart = newCart;
     },
-    test: (state) => {
-      console.log("called!");
-      console.log(state);
+    resetCart: (state) => {
+      state.itemsInCart = [];
     },
   },
 });
 
-export const { addItemToCart, removeItemInCart } = accountSlice.actions;
+export const { addItemToCart, removeItemInCart, resetCart } =
+  accountSlice.actions;
 
 export default accountSlice.reducer;
