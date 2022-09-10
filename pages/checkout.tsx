@@ -1,8 +1,10 @@
+import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { resetCart } from "../redux/accountSlice";
 import ProjectCard from "../components/ProductCard";
 
 const checkout = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const cartItems: [] = useSelector((state: any) => state.account.itemsInCart);
 
@@ -24,6 +26,7 @@ const checkout = () => {
       .then((data) => {
         if (data.message === "success") {
           dispatch(resetCart());
+          router.push("/about");
         }
       });
   }
