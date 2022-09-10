@@ -12,7 +12,6 @@ const ProductCard = (props: any) => {
   );
 
   const addItem = () => {
-    console.log(`itemCount is ${itemCount}`);
     setItemCount((prev: any) => prev + 1);
     // dispatch(test());
     dispatch(

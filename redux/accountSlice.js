@@ -19,7 +19,6 @@ export const accountSlice = createSlice({
       // console.log(JSON.stringify(action.payload));
       let newCart = [...state.itemsInCart];
       const index = newCart.findIndex((item) => item.id === action.payload.id);
-      console.log(index);
       if (index === -1) {
         newCart = [...newCart, action.payload];
       } else {

@@ -7,12 +7,10 @@ import NavBar from "../components/NavBar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <SessionProvider session={pageProps.session}>
-      <Provider store={store}>
-        <NavBar />
-        <Component {...pageProps} />
-      </Provider>
-    </SessionProvider>
+    <Provider store={store}>
+      <NavBar />
+      <Component {...pageProps} />
+    </Provider>
   );
 }
 

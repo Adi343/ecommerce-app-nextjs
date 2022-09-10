@@ -4,6 +4,18 @@ import ProjectCard from "../components/ProductCard";
 const checkout = () => {
   const cartItems: [] = useSelector((state: any) => state.account.itemsInCart);
 
+  function orderItems() {
+    fetch("/api/order", {
+      method: "POST",
+      body: JSON.stringify(cartItems),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }
+
   return (
     <div
       style={{
@@ -62,6 +74,7 @@ const checkout = () => {
               backgroundColor: "black",
               color: "white",
             }}
+            onClick={orderItems}
           >
             Checkout
           </button>
