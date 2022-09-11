@@ -13,9 +13,7 @@ export default async function handler(
     console.log(JSON.stringify(req.body));
 
     const orderObj = await prisma.orders.create({
-      data: {
-        desc: "testing orders",
-      },
+      data: {},
     });
 
     req.body.forEach(async (i: any) => {
