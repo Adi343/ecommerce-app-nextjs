@@ -1,3 +1,5 @@
+import Image from "next/image";
+import githubIcon from "../public/GitHub-Mark-64px.png";
 const about = () => {
   return (
     <div
@@ -12,13 +14,38 @@ const about = () => {
       <span
         style={{ fontWeight: "bold", fontSize: "1.25rem", textAlign: "center" }}
       >
-        Your order has been saved to a database
+        Your order has been saved to a database!
       </span>
-      <span
-        style={{ fontWeight: "bold", fontSize: "1.25rem", textAlign: "center" }}
+
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "250px",
+          height: "50px",
+        }}
       >
-        Checkout project code at
-      </span>
+        <span>Check out code at</span>
+        <a
+          href={"https://github.com/Adi343/ecommerce-app-nextjs"}
+          target="_blank"
+          style={{
+            paddingTop: "5px",
+            marginLeft: "5px",
+          }}
+        >
+          <Image
+            width={20}
+            height={20}
+            src={githubIcon}
+            style={{
+              display: "inline-block",
+              verticalAlign: "bottom",
+            }}
+          />
+        </a>
+      </div>
     </div>
   );
 };
