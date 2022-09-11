@@ -1,6 +1,13 @@
 import { useState } from "react";
+import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, removeItemInCart } from "../redux/accountSlice";
+
+import { Apple } from "iconoir-react";
+import { CoffeeCup } from "iconoir-react";
+import { PizzaSlice } from "iconoir-react";
+import { BreadSlice } from "iconoir-react";
+import { Chocolate } from "iconoir-react";
 
 const ProductCard = (props: any) => {
   const dispatch = useDispatch();
@@ -44,6 +51,7 @@ const ProductCard = (props: any) => {
         justifyContent: "space-between",
         width: "275px",
         height: "150px",
+        margin: "3px",
         borderRadius: "10px",
         backgroundColor: "black",
         color: "#f97316",
@@ -72,12 +80,31 @@ const ProductCard = (props: any) => {
           <span>{props.name}</span>
           <div
             style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
               width: "90px",
               height: "90px",
               borderRadius: "10px",
               backgroundColor: "white",
             }}
-          />
+          >
+            {props.name === "Apple" ? (
+              <Apple width={80} height={80} color={"#000000"} />
+            ) : null}
+            {props.name === "Coffee" ? (
+              <CoffeeCup width={60} height={60} color={"#000000"} />
+            ) : null}
+            {props.name === "Pizza" ? (
+              <PizzaSlice width={60} height={60} color={"#000000"} />
+            ) : null}
+            {props.name === "Bread" ? (
+              <BreadSlice width={60} height={60} color={"#000000"} />
+            ) : null}
+            {props.name === "Chocolate" ? (
+              <Chocolate width={60} height={60} color={"#000000"} />
+            ) : null}
+          </div>
         </div>
       </div>
 

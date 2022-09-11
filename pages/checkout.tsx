@@ -46,10 +46,26 @@ const checkout = () => {
           alignItems: "center",
           justifyContent: "center",
           // backgroundColor: "whitesmoke",
-          height: "60vh",
+          height: "100vh",
           width: "60%",
         }}
       >
+        {cartItems.length > 0 ? (
+          <button
+            style={{
+              alignSelf: "end",
+              height: "30px",
+              width: "90px",
+              borderRadius: "5px",
+              margin: "5px",
+              backgroundColor: "black",
+              color: "white",
+            }}
+            onClick={orderItems}
+          >
+            Checkout
+          </button>
+        ) : null}
         {/* {cartItems.map((item: any) => (
         <div
         style={{
@@ -78,22 +94,6 @@ const checkout = () => {
         {cartItems.map((item: any) => (
           <ProjectCard id={item.id} name={item.name} quantity={item.quantity} />
         ))}
-        {cartItems.length > 0 ? (
-          <button
-            style={{
-              alignSelf: "end",
-              height: "30px",
-              width: "90px",
-              borderRadius: "5px",
-              margin: "5px",
-              backgroundColor: "black",
-              color: "white",
-            }}
-            onClick={orderItems}
-          >
-            Checkout
-          </button>
-        ) : null}
       </div>
     </div>
   );
