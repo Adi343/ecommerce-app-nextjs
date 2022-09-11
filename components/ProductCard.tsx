@@ -26,6 +26,7 @@ const ProductCard = (props: any) => {
         id: props.id,
         name: props.name,
         quantity: itemCount + 1,
+        price: props.price,
       })
     );
   };
@@ -107,6 +108,8 @@ const ProductCard = (props: any) => {
           </div>
         </div>
       </div>
+      {/* Price of item*/}
+      <span>₹ {props.price}</span>
 
       {/* Div for Counter and buttons */}
       <div

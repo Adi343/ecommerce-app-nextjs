@@ -1,18 +1,24 @@
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { resetCart } from "../redux/accountSlice";
-import ProjectCard from "../components/ProductCard";
+import ProductCard from "../components/ProductCard";
 
 const checkout = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const cartItems: [] = useSelector((state: any) => state.account.itemsInCart);
+  const total = cartItems
+    .map((item: any) => item.quantity * item.price)
+    .reduce(function (result: any, item: any) {
+      return result + item;
+    }, 0);
 
   function orderItems() {
     const orderBody = cartItems.map((item: any) => {
       return {
         name: item.name,
         quantity: item.quantity,
+        price: item.price,
       };
     });
     fetch("/api/order", {
@@ -76,8 +82,36 @@ const checkout = () => {
           </span>
         ) : null}
         {cartItems.map((item: any) => (
-          <ProjectCard id={item.id} name={item.name} quantity={item.quantity} />
+          <ProductCard
+            id={item.id}
+            name={item.name}
+            quantity={item.quantity}
+            price={item.price}
+          />
         ))}
+        {total > 0 ? (
+          <div
+            style={{
+              width: "275px",
+              height: "50px",
+              borderRadius: "10px",
+
+              backgroundColor: "black",
+            }}
+          >
+            <span
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "orange",
+                fontSize: "1.5rem",
+              }}
+            >
+              ₹ {total}
+            </span>
+          </div>
+        ) : null}
 
         {cartItems.length > 0 ? (
           <button
