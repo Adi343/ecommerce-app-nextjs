@@ -15,7 +15,7 @@ model Orders{
   items Item[]
 }
 
-model Item{
+model Items{
   id Int @id @default(autoincrement())
   orders Orders @relation(fields: [orderId],references: [id])
   orderId Int
