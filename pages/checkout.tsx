@@ -56,21 +56,6 @@ const checkout = () => {
           width: "60%",
         }}
       >
-        {/* {cartItems.map((item: any) => (
-        <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          backgroundColor: "black",
-          width: "300px",
-          borderRadius: "10px",
-        }}
-        >
-        <span style={{ color: "#f97316" }}>{item.name}</span>
-        <span style={{ color: "#f97316" }}>{item.quantity}</span>
-        </div>
-      ))} */}
         {cartItems.length === 0 ? (
           <span
             style={{
