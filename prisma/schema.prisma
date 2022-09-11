@@ -12,7 +12,7 @@ model Orders{
   id Int @id @default(autoincrement())
   createdAt DateTime @default(now())
   total Int
-  items Item[]
+  items Items[]
 }
 
 model Items{

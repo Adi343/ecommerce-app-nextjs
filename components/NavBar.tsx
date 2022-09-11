@@ -10,10 +10,6 @@ const NavBar = () => {
       return result + item;
     }, 0);
 
-  // useSelector((state) => {
-  //   console.log(JSON.stringify(state));
-  // });
-
   return (
     <div
       style={{

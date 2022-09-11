@@ -41,7 +41,7 @@ export const accountSlice = createSlice({
       //   name: action.payload.name,
       //   quantity: action.payload.quantity - 1,
       // };
-      console.log(JSON.stringify(state.itemsInCart));
+
       // state.itemsInCart = [...state.itemsInCart, product];
       state.itemsInCart = newCart;
     },

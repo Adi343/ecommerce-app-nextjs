@@ -10,14 +10,11 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === "POST") {
-    console.log(JSON.stringify(req.body));
     const total = req.body
       .map((item: any) => item.quantity * item.price)
       .reduce(function (result: any, item: any) {
         return result + item;
       }, 0);
-
-    console.log(total);
 
     const orderObj = await prisma.orders.create({
       data: {
@@ -26,7 +23,7 @@ export default async function handler(
     });
 
     req.body.forEach(async (i: any) => {
-      const item = await prisma.item.create({
+      const item = await prisma.items.create({
         data: {
           name: i.name,
           quantity: i.quantity,
