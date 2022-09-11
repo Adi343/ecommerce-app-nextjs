@@ -55,7 +55,7 @@ const ProductCard = (props: any) => {
         margin: "3px",
         borderRadius: "10px",
         backgroundColor: "black",
-        color: "#f97316",
+        color: "#e85d04",
       }}
     >
       {/* Div for id , name and image */}
@@ -87,7 +87,7 @@ const ProductCard = (props: any) => {
               width: "90px",
               height: "90px",
               borderRadius: "10px",
-              backgroundColor: "white",
+              backgroundColor: "whitesmoke",
             }}
           >
             {props.name === "Apple" ? (

@@ -14,7 +14,7 @@ const Footer = () => {
         width: "100%",
       }}
     >
-      <span style={{ color: "orange" }}></span>
+      <span style={{ color: "orange" }}>Made with NextJS MySQL</span>
     </div>
   );
 };

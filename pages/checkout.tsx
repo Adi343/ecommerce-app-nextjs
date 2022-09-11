@@ -108,7 +108,7 @@ const checkout = () => {
                 fontSize: "1.5rem",
               }}
             >
-              ₹ {total}
+              Total: ₹{total}
             </span>
           </div>
         ) : null}
