@@ -14,7 +14,7 @@ const Home: NextPage = () => {
           // gridTemplateColumns: "1fr 1fr",
           alignItems: "center",
           justifyContent: "center",
-          height: "60vh",
+          height: "100%",
           margin: "5px",
           padding: "10px",
           borderRadius: "5px",
@@ -26,6 +26,7 @@ const Home: NextPage = () => {
               id={item.id}
               name={item.name}
               quantity={item.quantity}
+              price={item.price}
             />
           );
         })}

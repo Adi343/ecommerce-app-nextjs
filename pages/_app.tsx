@@ -4,15 +4,15 @@ import { SessionProvider } from "next-auth/react";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <SessionProvider session={pageProps.session}>
-      <Provider store={store}>
-        <NavBar />
-        <Component {...pageProps} />
-      </Provider>
-    </SessionProvider>
+    <Provider store={store}>
+      <NavBar />
+      <Component {...pageProps} />
+      <Footer />
+    </Provider>
   );
 }
 

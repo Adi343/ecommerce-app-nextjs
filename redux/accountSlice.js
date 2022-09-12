@@ -19,7 +19,6 @@ export const accountSlice = createSlice({
       // console.log(JSON.stringify(action.payload));
       let newCart = [...state.itemsInCart];
       const index = newCart.findIndex((item) => item.id === action.payload.id);
-      console.log(index);
       if (index === -1) {
         newCart = [...newCart, action.payload];
       } else {
@@ -42,17 +41,17 @@ export const accountSlice = createSlice({
       //   name: action.payload.name,
       //   quantity: action.payload.quantity - 1,
       // };
-      console.log(JSON.stringify(state.itemsInCart));
+
       // state.itemsInCart = [...state.itemsInCart, product];
       state.itemsInCart = newCart;
     },
-    test: (state) => {
-      console.log("called!");
-      console.log(state);
+    resetCart: (state) => {
+      state.itemsInCart = [];
     },
   },
 });
 
-export const { addItemToCart, removeItemInCart } = accountSlice.actions;
+export const { addItemToCart, removeItemInCart, resetCart } =
+  accountSlice.actions;
 
 export default accountSlice.reducer;

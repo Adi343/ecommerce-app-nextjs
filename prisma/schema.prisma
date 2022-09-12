@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model Orders{
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  total Int
+  items Items[]
+}
+
+model Items{
+  id Int @id @default(autoincrement())
+  orders Orders @relation(fields: [orderId],references: [id])
+  orderId Int
+  name String
+  quantity Int @default(0)
+}
