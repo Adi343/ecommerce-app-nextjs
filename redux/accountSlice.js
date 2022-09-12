@@ -10,13 +10,6 @@ export const accountSlice = createSlice({
   initialState,
   reducers: {
     addItemToCart: (state, action) => {
-      // const newCart = state.itemsInCart.map((item) => {
-      //   if (item.id === action.payload.id) {
-      //     item.quantity = action.payload.quantity;
-      //   }
-      //   return item;
-      // });
-      // console.log(JSON.stringify(action.payload));
       let newCart = [...state.itemsInCart];
       const index = newCart.findIndex((item) => item.id === action.payload.id);
       if (index === -1) {
