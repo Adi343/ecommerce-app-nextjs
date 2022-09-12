@@ -23,6 +23,7 @@ const Home: NextPage = () => {
         {products.map((item: any) => {
           return (
             <ProductCard
+              key={item.id}
               id={item.id}
               name={item.name}
               quantity={item.quantity}

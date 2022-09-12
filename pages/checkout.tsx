@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { resetCart } from "../redux/accountSlice";
 import ProductCard from "../components/ProductCard";
 
-const checkout = () => {
+const Checkout = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const cartItems: [] = useSelector((state: any) => state.account.itemsInCart);
@@ -68,6 +68,7 @@ const checkout = () => {
         ) : null}
         {cartItems.map((item: any) => (
           <ProductCard
+            key={item.id}
             id={item.id}
             name={item.name}
             quantity={item.quantity}
@@ -119,4 +120,4 @@ const checkout = () => {
   );
 };
 
-export default checkout;
+export default Checkout;
