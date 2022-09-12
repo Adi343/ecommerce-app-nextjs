@@ -29,6 +29,7 @@ const about = () => {
         <span>Check out code at</span>
         <a
           href={"https://github.com/Adi343/ecommerce-app-nextjs"}
+          rel="noopener noreferrer"
           target="_blank"
           style={{
             paddingTop: "5px",
